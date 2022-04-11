@@ -13,7 +13,16 @@ actor DBank {
   };
 
   public func withDraw(amount: Nat) {
-    currentValue -= amount;
-    Debug.print(debug_show(currentValue));
+    let tempValue: Int = currentValue - amount;
+    if(tempValue  >= 0){
+      currentValue -= amount;
+      Debug.print(debug_show(currentValue));
+    } else {
+      Debug.print("error: amount is greater then the current value")
+    }
+  };
+
+  public query func checkBalance(): async Nat{
+      return currentValue;
   };
 }
