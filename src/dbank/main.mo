@@ -1,8 +1,8 @@
 import Debug "mo:base/Debug"
 
 actor DBank {
-  var currentValue = 300;
-  currentValue := 100;
+  stable var currentValue = 300;
+  // currentValue := 100;
 
   let id = 3254154634565456;
   // Debug.print(debug_show(id));
